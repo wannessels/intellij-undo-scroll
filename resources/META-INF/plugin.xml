@@ -1,0 +1,37 @@
+<idea-plugin version="2">
+  <id>be.waines.idea.undo-scroll</id>
+  <name>Undo Scroll</name>
+  <version>1.0</version>
+  <vendor email="wannes.sels@gmail.com" url="https://github.com/wannessels">Wannes Sels</vendor>
+
+  <description><![CDATA[
+      Hold down CTRL-Z or CTRL-Shift-Z and scroll to stream through undo and redo events.
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Initial release
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="131.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+  <depends>com.intellij.modules.lang</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <project-components>
+      <component>
+          <implementation-class>be.wannes.UndoScrollPlugin</implementation-class>
+      </component>
+  </project-components>
+    <actions>
+        <action id="UndoScrollAction" class="be.wannes.action.UndoScrollAction" text="UndoScrollAction"/>
+    </actions>
+</idea-plugin>
