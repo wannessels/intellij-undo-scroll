@@ -5,7 +5,7 @@
   <vendor email="wannes.sels@gmail.com" url="https://github.com/wannessels">Wannes Sels</vendor>
 
   <description><![CDATA[
-      Hold down CTRL-Z or CTRL-Shift-Z and scroll to stream through undo and redo events.
+      Press CTRL-Z or CTRL-Shift-Z, hold down CTRL, and scroll to stream through undo and redo events.
     ]]></description>
 
   <change-notes><![CDATA[
@@ -33,5 +33,6 @@
   </project-components>
     <actions>
         <action id="UndoScrollAction" class="be.wannes.action.UndoScrollAction" text="UndoScrollAction"/>
+        <action id="RedoScrollAction" class="be.wannes.action.RedoScrollAction" text="RedoScrollAction"/>
     </actions>
 </idea-plugin>

@@ -30,15 +30,15 @@ public class UndoScrollPlugin implements ProjectComponent {
     @Override
     public void initComponent() {
         Keymap keyMap = getKeyMap();
-        replaceDefaultAction(keyMap, IdeActions.ACTION_UNDO);
-        replaceDefaultAction(keyMap, IdeActions.ACTION_REDO);
+        replaceDefaultAction(keyMap, "UndoScrollAction", IdeActions.ACTION_UNDO);
+        replaceDefaultAction(keyMap, "RedoScrollAction", IdeActions.ACTION_REDO);
     }
 
-    private void replaceDefaultAction(Keymap keyMap, String action) {
+    private void replaceDefaultAction(Keymap keyMap, String actionId, String action) {
         Shortcut[] shortcuts = keyMap.getShortcuts(action);
         for (Shortcut shortcut : shortcuts) {
             keyMap.removeShortcut(action, shortcut);
-            keyMap.addShortcut("UndoScrollAction", shortcut);
+            keyMap.addShortcut(actionId, shortcut);
         }
     }
 
